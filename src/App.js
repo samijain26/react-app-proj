@@ -10,9 +10,8 @@ function App() {
     <div>
       <NavBar />
       <Routes>
-        <Route path="/:category" element={<Category  />} />
-        <Route path="/" key="about" element={<About/>} />
-        
+        <Route path="/" key="about" element={<About />} />
+        <Route path="/:category" element={<Category />} />
       </Routes>
     </div>
   );
