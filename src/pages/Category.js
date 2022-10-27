@@ -3,18 +3,19 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import News from '../components/News'
 import { useParams } from "react-router-dom";
-
+import Header from '../components/Header';
 
 export default function Category() {
   const apiKey = process.env.REACT_APP_API;
 // console.log(category)
     let params = useParams();
     let category = params.category;
-    const [news,setNews]=useState([])
+  const [news, setNews] = useState([])
+  const [country,setCountry] = useState('us')
    
      const getNewsHandler  = async (signal) => {
     // const getNewsHandler = () => {
-       let api = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}&pageSize=12`;
+       let api = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&pageSize=12`;
             // .then((res)=> {
             //     // console.log(res)
             //     setNews(res.data.articles)
@@ -35,21 +36,30 @@ export default function Category() {
       return () => {
         controller.abort();
       };
-    }, []);
-      console.log(news)
+    }, [category,country]);
+  console.log(news)
+  
+  const changeCountryhandler = () => {
+   
+    setCountry('in')
+    //  getNewsHandler()
+    console.log(country)
+  }
+  // useEffect(()=> {
+    
+  // },[country])
     
   return (
       <>
         <div className="container my-3 ">
-          <h1 className="text-center">
+          {/* <h1 className="text-center">
             
-            Welcome to Quick News Bites!!Keep yourself updated with top stories from {category}
-          </h1>
-
-
-          {/* <button className="btn btn-primary" onClick={getNewsHandler} >
-            Fetch News
-          </button> */}
+            Welcome to Quick News Bites!!Keep yourself updated with top stories from {category.toUpperCase()}
+          </h1> */}
+        <Header category={category} />
+        <h5>News are coming fron {country}</h5>
+        <button onClick={changeCountryhandler}>Country</button>
+        
           <News data={news} />
         </div>
       </>
