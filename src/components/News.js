@@ -1,5 +1,5 @@
 import React from 'react'
-import NewsItems from "../pages/NewsItems"
+import NewsItems from "./NewsItems"
 
 export default function News({ data }) {
    
