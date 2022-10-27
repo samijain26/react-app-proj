@@ -2,7 +2,7 @@ import React from 'react'
 import NewsItems from './NewsItems';
 
 export default function News({ data }) {
-    console.log(data)
+   
   return (
     <div className="container my-3">
       
@@ -10,7 +10,7 @@ export default function News({ data }) {
       <div className="row">
               {data.map((item) => {
             return(
-            <div className="col-3">
+            <div className="col-md-4">
                 <NewsItems key={item.url} news={item} />
             </div>
             )

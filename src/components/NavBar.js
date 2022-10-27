@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
@@ -27,12 +27,32 @@ export default function NavBar() {
                   aria-current="page"
                   to="/"
                 >
-                  Home
+                  About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/about">
-                  About
+                <Link className="nav-link text-white" to="/business">
+                  Business
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/science">
+                  Science
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/sports">
+                  Sports
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/health">
+                  Health
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/technology">
+                  Technology
                 </Link>
               </li>
             </ul>
@@ -54,4 +74,3 @@ export default function NavBar() {
     </div>
   );
 }
-

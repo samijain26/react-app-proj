@@ -3,7 +3,7 @@ import React from 'react'
 export default function NewsItems({ news }) {
     console.log(news)
   return (
-    <div className="container">
+    <div className="container my-3">
       <div className="row">
         <div className="col-3">
           <div className="card " style={{ width: "18rem" }}>
@@ -18,10 +18,10 @@ export default function NewsItems({ news }) {
             />
             <div className="card-body">
               <h5 className="card-title">
-                {news.title ? news.title.slice(0, 45) : ""}
+                {news.title}
               </h5>
               <p className="card-text">
-                {news.description ? news.description.slice(0, 60) : ""}
+                {news.description ? news.description.slice(0, 80) : ""}
               </p>
               <a href={news.url}  className="btn btn-primary">
                 Read More

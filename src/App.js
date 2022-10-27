@@ -1,17 +1,18 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Home from "./pages/Home";
+import Category from "./pages/Category";
 import About from "./pages/About";
 
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/:category" element={<Category  />} />
+        <Route path="/" key="about" element={<About/>} />
+        
       </Routes>
     </div>
   );
