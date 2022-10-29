@@ -8,7 +8,9 @@ import Header from '../components/Header';
 export default function Category() {
   const apiKey = process.env.REACT_APP_API;
 // console.log(category)
-    let params = useParams();
+  
+  let params = useParams();
+  
     let category = params.category;
   const [news, setNews] = useState([])
   const [country,setCountry] = useState('us')
@@ -40,8 +42,11 @@ export default function Category() {
   console.log(news)
   
   const changeCountryhandler = () => {
-   
-    setCountry('in')
+    if (country === 'us') {
+      setCountry('in')
+    } else {
+      setCountry('us')
+    }
     //  getNewsHandler()
     console.log(country)
   }
@@ -50,18 +55,24 @@ export default function Category() {
   // },[country])
     
   return (
-      <>
-        <div className="container my-3 ">
-          {/* <h1 className="text-center">
-            
-            Welcome to Quick News Bites!!Keep yourself updated with top stories from {category.toUpperCase()}
-          </h1> */}
-        <Header category={category} />
-        <h5>News are coming fron {country}</h5>
-        <button onClick={changeCountryhandler}>Country</button>
-        
-          <News data={news} />
+    <>
+      {/* <div className="container my-3 "> */}
+        <div className="text-center text-bg-info p-3 fs-3">
+          <Header category={category} />
+         
+          <h5 classname="p-3 fs-3">
+            News are coming from {country === "us" ? "USA" : "INDIA"}
+          </h5>
+
+          <button
+            className="btn btn-lg btn-outline-dark btn-3"
+            onClick={changeCountryhandler}
+          >
+            USA/INDIA
+          </button>
         </div>
-      </>
-    );
+        <News data={news} />
+      {/* </div> */}
+    </>
+  );
 }

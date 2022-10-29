@@ -8,10 +8,10 @@ export default function News({ data }) {
       
       
       <div className="row">
-              {data.map((item) => {
+              {data.map((item,i) => {
             return(
             <div className="col-md-4">
-                <NewsItems key={item.url} news={item} />
+                <NewsItems key={i} news={item} />
             </div>
             )
         })}

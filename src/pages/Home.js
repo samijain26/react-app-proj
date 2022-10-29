@@ -37,32 +37,38 @@ textRef = textRef ? textRef : "tesla";
 
   return (
     <>
-      <div className="container my-3 ">
-        <h1>
-          Welcome to Quick News Bite.  Keep you updated with current affairs
-          . Use search to find specific news (eg.
-          type tesla to get tesla news). or selct category from Navigation Bar
+      {/* <div className="container my-3 "> */}
+        <figure class="text-center text-bg-info p-3 fs-3">
+          <h3 style={{ color: "maroon" }}>
+            Keep youself updated with current affairs . Use search to find
+            specific news (eg. type tesla to get tesla news). or selct category
+            from Navigation Bar
+            <br />
+            <br />
+          </h3>
+
+          <form className="d-flex" role="search" onSubmit={handleSubmit}>
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              ref={textRef}
+            />
+            <button
+              className="btn btn-outline-info btn-lg btn-dark"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
           <br />
           <br />
-        </h1>
-
-        <form className="d-flex" role="search" onSubmit={handleSubmit}>
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            ref={textRef}
-          />
-          <button className="btn btn-outline-info btn-light" type="submit">
-            Search
-          </button>
-        </form>
-
+        </figure>
         {/* <button className="btn btn-primary" onClick={getNewsHandler}>
           Fetch News
         </button> */}
-      </div>
+      {/* </div> */}
       <div className="container">
         <div className="row">
           {allnews.map((item) => {
@@ -81,7 +87,13 @@ textRef = textRef ? textRef : "tesla";
                   <div className="card-body">
                     <h5 className="card-title">{item.title}</h5>
                     <p className="card-text">{item.description}</p>
-                    <a href={item.url} className="btn btn-primary">
+                    <p class="card-text">
+                      <small class="text-muted">
+                        {new Date(item.publishedAt).toLocaleDateString()}{" "}
+                        {new Date(item.publishedAt).toLocaleTimeString()}
+                      </small>
+                    </p>
+                    <a href={item.url} className="btn btn-info">
                       Read More
                     </a>
                   </div>
