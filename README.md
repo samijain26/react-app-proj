@@ -9,6 +9,12 @@
 
 <img width="992" alt="Screen Shot 2022-10-30 at 1 01 24 PM" src="https://user-images.githubusercontent.com/110350498/198891452-1a6154bc-b4c4-43d0-af75-2e3f51c7bcc5.png">
 
+# Git Repo: 
+You can clone the News Bite app from
+https://github.com/samijain26/react-app-proj
+
+###  NEWS BITES is deployed in Netlify but with app restriction you can not fetch the data in production as the app is used under developer plan. deployment link is as follows
+https://euphonious-elf-eb2123.netlify.app/
 
 
 
@@ -17,7 +23,8 @@
 
 
 
-# Getting Started with Create React App
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
