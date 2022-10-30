@@ -38,8 +38,9 @@ export default function Category() {
       return () => {
         controller.abort();
       };
+      // eslint-disable-next-line
     }, [category,country]);
-  console.log(news)
+  // console.log(news)
   
   const changeCountryhandler = () => {
     if (country === 'us') {
@@ -56,12 +57,12 @@ export default function Category() {
     
   return (
     <>
-      {/* <div className="container my-3 "> */}
-        <div className="text-center text-bg-info p-3 fs-3">
+      <div className="container-fluid my-3 ">
+        <div className="text-center  p-3 fs-3 mt-5">
           <Header category={category} />
          
-          <h5 classname="p-3 fs-3">
-            News are coming from {country === "us" ? "USA" : "INDIA"}
+          <h5 className="p-3 fs-3 ">
+            News Source: {country === "us" ? "USA" : "INDIA"}
           </h5>
 
           <button
@@ -72,7 +73,7 @@ export default function Category() {
           </button>
         </div>
         <News data={news} />
-      {/* </div> */}
+      </div>
     </>
   );
 }

@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function Header({category}) {
   return (
-    <div>
-      <h1 className="text-center">
-        Top Stories from {category.toUpperCase()}
-      </h1>
+    <div className='container'>
+      <h2 className="text-center mt-4 ">
+        Top Stories :{category.toUpperCase()}
+      </h2>
     </div>
   );
 }

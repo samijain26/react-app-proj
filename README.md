@@ -1,3 +1,22 @@
+# News Bites
+### This app use an external api NEWS APP to fetch news from different sources available on the web. You can view news based on specific category like sports,business etc available from the navbar or you can search specific news by putting keywords or phrases in the search bar from home page. Currrently resources from India or USA is used to fetch the news data.
+# Technologies used:
+### React,Bootstrap,JavaScript,React Router,Axios
+## Screen shot:
+<img width="1024" alt="Screen Shot 2022-10-30 at 1 00 26 PM" src="https://user-images.githubusercontent.com/110350498/198891514-cdbd3ef1-e34c-4c2b-b123-012ba1861b57.png">
+
+<img width="1008" alt="Screen Shot 2022-10-30 at 1 00 50 PM" src="https://user-images.githubusercontent.com/110350498/198891488-6e1c66d7-94cc-4f79-8940-341a269feea7.png">
+
+<img width="992" alt="Screen Shot 2022-10-30 at 1 01 24 PM" src="https://user-images.githubusercontent.com/110350498/198891452-1a6154bc-b4c4-43d0-af75-2e3f51c7bcc5.png">
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -11,7 +11,7 @@ export default function Home() {
   const getNewsHandler = () => {
       
     axios
-      .get(`https://newsapi.org/v2/everything?q=${textRef}&apiKey=${apiKey}`)
+      .get(`https://newsapi.org/v2/everything?q=${textRef}&apiKey=${apiKey}&pageSize=30`)
       .then((res) => {
         console.log(res);
         setAllNews(res.data.articles);
@@ -29,51 +29,50 @@ const handleSubmit = (e) => {
 
   // { current: element }   ->  element is our input
  textRef = textRef.current.value;
-textRef = textRef ? textRef : "tesla";
+textRef = textRef ? textRef : "apple";
   getNewsHandler();
 };
 
 
 
   return (
-    <>
-      {/* <div className="container my-3 "> */}
-        <figure class="text-center text-bg-info p-3 fs-3">
-          <h3 style={{ color: "maroon" }}>
-            Keep youself updated with current affairs . Use search to find
+    <div className='container-fluid'>
+      <div className="container  mt-5">
+        <figure
+          className="text-left  p-3 fs-3"
+          
+        >
+          <h3 className=" mt-5" style={{ color: "blue" }}>
+             Use search to find
             specific news (eg. type tesla to get tesla news). or selct category
             from Navigation Bar
             <br />
             <br />
           </h3>
-
-          <form className="d-flex" role="search" onSubmit={handleSubmit}>
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              ref={textRef}
-            />
-            <button
-              className="btn btn-outline-info btn-lg btn-dark"
-              type="submit"
-            >
-              Search
-            </button>
-          </form>
-          <br />
-          <br />
         </figure>
-        {/* <button className="btn btn-primary" onClick={getNewsHandler}>
-          Fetch News
-        </button> */}
-      {/* </div> */}
-      <div className="container">
+       
+        <form className="d-flex  mb-5" role="search" onSubmit={handleSubmit}>
+          <input
+            className="form-control me-2  p-3"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            ref={textRef}
+          />
+          <button
+            className="btn btn-outline-info btn-lg btn-dark"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+  
+      <div className="container mb-5">
         <div className="row">
           {allnews.map((item) => {
             return (
-              <div className="col-3">
+              <div key={item.title} className="col-3">
                 <div className="card " style={{ width: "18rem" }}>
                   <img
                     src={
@@ -87,8 +86,8 @@ textRef = textRef ? textRef : "tesla";
                   <div className="card-body">
                     <h5 className="card-title">{item.title}</h5>
                     <p className="card-text">{item.description}</p>
-                    <p class="card-text">
-                      <small class="text-muted">
+                    <p className="card-text">
+                      <small className="text-muted">
                         {new Date(item.publishedAt).toLocaleDateString()}{" "}
                         {new Date(item.publishedAt).toLocaleTimeString()}
                       </small>
@@ -103,6 +102,6 @@ textRef = textRef ? textRef : "tesla";
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 }
