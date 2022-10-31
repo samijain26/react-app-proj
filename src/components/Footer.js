@@ -6,7 +6,7 @@ export default function Footer() {
       <br></br>
       <footer className=" text-white text-bg-info">
         {/* <!-- Grid container --> */}
-        <div className="container  mb-0 p-4">
+        <div className="container  py-5">
           {/* <!-- Section: Images --> */}
 
           <div className="row">

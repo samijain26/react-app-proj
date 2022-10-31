@@ -1,5 +1,11 @@
 # News Bites
-### This app use an external api NEWS APP to fetch news from different sources available on the web. You can view news based on specific category like sports,business etc available from the navbar or you can search specific news by putting keywords or phrases in the search bar from home page. Currrently resources from India or USA is used to fetch the news data.
+### This app use an external api NEWS APP to fetch news from different sources available on the web. You can view news based on specific category like sports,business etc available from the navbar or you can search specific news by putting keywords or phrases in the search bar from home page. Currrently news Bites fatches data from us(USA) source or in(India). This app use router-Dom to wrap routes inside it.The app is targeted for all internet user to fetch news for various category. They can hit following routes:
+
+###   /home   to search news based on their query
+###  /category/:id   to get news from specific category
+###  /about   information about NEWS BITES
+
+
 # Technologies used:
 ### React,Bootstrap,JavaScript,React Router,Axios
 ## Screen shot:

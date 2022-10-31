@@ -62,7 +62,7 @@ export default function Category() {
           <Header category={category} />
          
           <h5 className="p-3 fs-3 ">
-            News Source: {country === "us" ? "USA" : "INDIA"}
+            News Source:  {country === "us" ? "USA" : "INDIA"}
           </h5>
 
           <button
